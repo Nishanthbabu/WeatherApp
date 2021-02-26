@@ -14,10 +14,8 @@ const CityNameInputScreen = ({navigation, executeGetSearchRequest}) => {
 
   const onSubmit = async () => {
     if (cityTextState && cityTextState !== '') {
-      const response = await executeGetSearchRequest(cityTextState);
-      if (response) {
-        navigation.navigate('WeatherList', {name: cityTextState});
-      }
+      await executeGetSearchRequest(cityTextState);
+      navigation.navigate('WeatherList', {name: cityTextState});
     } else {
       Alert.alert('Alert!', 'Please enter city name');
     }

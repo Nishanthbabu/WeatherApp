@@ -45,7 +45,7 @@ export const executeGetSearchRequest = (city) => {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          if (response.cod && response.cod === 200) {
+          if (response.cod && response.cod === '200') {
             dispatch(getSearchRequestSuccess(response));
           } else {
             Alert.alert(
